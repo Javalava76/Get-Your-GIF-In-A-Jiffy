@@ -81,11 +81,15 @@ renderButtons();
     $(this).attr("src", $(this).attr("data-animate"));
     $(this).attr("data-state", "animate");
 
-  } else {
+  } 
+
+  else {
 
     $(this).attr("src", $(this).attr("data-still"));
     $(this).attr("data-state", "still");
   }
+
+});
 
 
 
@@ -97,16 +101,20 @@ renderButtons();
 
     var userInput = $("#inputActivity").val().trim();
     
-      if (userInput !== "") {
+      if (userInput !== "") 
 
-          activities.push(userInput);    
+          activities.push(userInput);  
+
+          $("#activityButtons").empty();  
           
           // call renderButtons function
           renderButtons();
-      }
-  })
+      
+  });
 
-});
+;
+
+// when the activity button is clicked it displays the returned gifs
 
   $(document).on("click", ".activityBtn", displayGif);
 
