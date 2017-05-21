@@ -5,3 +5,16 @@
 /*.form-group, .btn {
 	float: right;
 }*/
+
+.activityBtn {
+	margin: 20px;
+	padding: 10px;
+	color: pink;
+}
+
+.gif {
+
+	float: left;
+	margin: 10px;
+}
+

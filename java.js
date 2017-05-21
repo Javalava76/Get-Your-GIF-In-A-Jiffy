@@ -31,7 +31,7 @@ function displayGif() {
  
     var gifActivity = $(this).attr("data-name");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-        gifActivity + "&rating=g&api_key=dc6zaTOxFJmzC&limit=10";
+        gifActivity + "&rating=g&api_key=dc6zaTOxFJmzC&limit=25";
 
 
     $.ajax({
@@ -50,20 +50,22 @@ function displayGif() {
 
         var rating = results[i].rating;
 
-        var p = $("<p>").text("Rating: " + rating);
+        // var p = $("<p>").text("Rating: " + rating);
 
         var gifImage = $("<img>");
 
-          gifImage.attr("src", results[i].images.fixed_height_still.url).attr("data-still", results[i].images.fixed_height_still.url).attr("data-animate", results[i].images.fixed_height.url).attr("data-state","still").attr("class","gif img-rounded img-responsive");
+          gifImage.attr("src", results[i].images.fixed_height_still.url).attr("data-still", results[i].images.fixed_height_still.url).attr("data-animate", results[i].images.fixed_height.url).attr("data-state","still").attr("class","gif img-rounded img-responsive animated fadeIn slow");
 
           gifDiv.append(gifImage);
-          gifDiv.append(p);
-          $("#gifActivity").prepend(gifDiv);
+          // gifDiv.append(p);
+          $("#gifActivity").append(gifDiv);
                                     
       }
     });
 
 }
+
+// ****************************************************
 
 renderButtons();
 
